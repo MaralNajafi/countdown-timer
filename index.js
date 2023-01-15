@@ -5,6 +5,7 @@ const DOMminutes = document.querySelector("#minutes");
 const DOMseconds = document.querySelector("#seconds");
 const startBtn = document.querySelector("#startBtn");
 const resetBtn = document.querySelector("#resetBtn");
+const clearBtn = document.querySelector("#clearBtn");
 
 
 let secPerMin = 60;
@@ -17,6 +18,9 @@ let countdownInterval;
 //CSS class names - variables
 
 const displayNone = "d-none";
+
+//default states
+clearBtn.disabled = true;
 
 //functions
 
@@ -31,6 +35,8 @@ function timeDisplay(inputTime, outputTime) {
 
 //start function
 function startFn() {
+
+    clearBtn.disabled = false;
 
     startBtn.classList.add(displayNone);
     resetBtn.classList.remove(displayNone);
@@ -50,13 +56,29 @@ function startFn() {
 
 };
 
-function resetFn() {
+//clear function
+function clearFn() {
+
+    clearBtn.disabled = true;
+
+    startBtn.classList.remove(displayNone);
+    resetBtn.classList.add(displayNone);
+
     DOMminutes.textContent = "02";
     DOMseconds.textContent = "00";
     clearInterval(countdownInterval);
     givenSeconds = secPerMin * givenMinute;
+    clearInterval(countdownInterval);
+}
+
+//reset function
+function resetFn() {
+    clearFn();
     startFn();
 };
 
+
+
 startBtn.addEventListener("click", startFn);
 resetBtn.addEventListener("click", resetFn);
+clearBtn.addEventListener("click", clearFn);
