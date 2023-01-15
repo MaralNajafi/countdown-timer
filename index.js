@@ -4,12 +4,17 @@
 const DOMminutes = document.querySelector("#minutes");
 const DOMseconds = document.querySelector("#seconds");
 const startBtn = document.querySelector("#startBtn");
+const resetBtn = document.querySelector("#resetBtn");
+
 
 let secPerMin = 60;
 let givenMinute = 2;
 let givenSeconds = secPerMin * givenMinute;
 let countdownInterval;
 
+//CSS class names - variables
+
+const displayNone = "d-none";
 
 //functions
 
@@ -24,6 +29,8 @@ function timeDisplay(inputTime, outputTime) {
 
 //start function
 function startFn() {
+    startBtn.classList.add(displayNone);
+    resetBtn.classList.remove(displayNone);
     countdownInterval = setInterval(() =>{
         --givenSeconds;
         minutes = Math.floor(givenSeconds / secPerMin);
