@@ -10,16 +10,21 @@ let givenMinute = 2;
 let givenSeconds = secPerMin * givenMinute;
 let countdownInterval;
 
+
+//functions
 function startFn() {
     countdownInterval = setInterval(() =>{
         --givenSeconds;
-        let minutes = Math.floor(givenSeconds / secPerMin);
-        let seconds = Math.floor(givenSeconds % secPerMin);
-    
+        minutes = Math.floor(givenSeconds / secPerMin);
+        seconds = Math.floor(givenSeconds % secPerMin);
         DOMminutes.textContent = minutes;
         DOMseconds.textContent = seconds;
         
+        if (minutes === 0 && seconds === 0) {
+            clearInterval(countdownInterval);
+        }
     }, 1000)
+
 }
 
 startBtn.addEventListener("click", startFn)
