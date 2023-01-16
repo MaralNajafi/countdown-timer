@@ -1,7 +1,15 @@
+/*font*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap');
+
 /*root css variables*/
 
 :root{
     --main-gradiant: linear-gradient(to right bottom, #00154e, #001445, #00123c, #001032, #010c29);
+
+    --ff-main: 'Open Sans', sans-serif;
+
+    --clr-dark-blue-100: #001032d8;
+    --clr-dark-blue-200: #001032;
 }
 
 /*utility classes*/
@@ -46,4 +54,76 @@
     padding: 0;
 }
 
+button{
+    font-family: inherit;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
 
+/*countdown style*/
+
+.container{
+    height: 100vh;
+    background-image: var(--main-gradiant);
+    font-family: var(--ff-main);
+}
+
+.countdown-container{
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    height: 20rem;
+    width: 100%;
+    max-width: 400px;
+    margin-inline: 5rem;
+}
+
+.countdown-wrapper{
+    gap: 1rem;
+}
+
+.countdown{
+    justify-content: center;
+    color: #ffffff;
+    font-size: 7rem;
+}
+
+.buttons-wrapper{
+    justify-content: center;
+    gap: 30px;
+}
+
+.buttons-wrapper button{
+    font-size: 18px;
+    font-weight: 500;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+    width: 8rem;
+    padding-block: 8px;
+    border-radius: 20px;
+}
+
+.clear-btn{
+    background-color: #ffffff;
+    color: var(--clr-dark-blue-200);
+}
+
+.clear-btn:disabled{
+    color: rgba(255, 255, 255, 0.285);
+    background-color: rgba(255, 255, 255, 0.11);
+    cursor: default;
+}
+
+.start-btn, .reset-btn{
+    color: #ffffff;
+    background-color: var(--clr-dark-blue-100);
+}
+
+.start-btn:hover, .reset-btn:hover{
+    background-color: var(--clr-dark-blue-200) ;
+}

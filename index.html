@@ -9,19 +9,24 @@
 </head>
 <body>
 
-    <div class="container">
-        <div class="countdown-wrapper">
-            <div class="countdown">
-                <span id="minutes">02</span>
-                <span>:</span>
-                <span id="seconds">00</span>
-            </div>
-        </div>
+    <div class="container flex-center flex-col">
+        <div class="countdown-container flex-center">
 
-        <div class="buttons-wrapper">
-            <button id="startBtn" class="start-btn">start</button>
-            <button id="resetBtn" class="reset-btn d-none">reset</button>
-            <button id="clearBtn" class="clear-btn">clear</button>
+            <div class="countdown-wrapper flex-col">
+
+                <div class="countdown d-flex">
+                    <span id="minutes">02</span>
+                    <span>:</span>
+                    <span id="seconds">00</span>
+                </div>
+                <div class="buttons-wrapper flex-row">
+                    <button id="startBtn" class="start-btn">start</button>
+                    <button id="resetBtn" class="reset-btn d-none">reset</button>
+                    <button id="clearBtn" class="clear-btn">clear</button>
+                </div>
+
+            </div>
+
         </div>
     </div>
 
