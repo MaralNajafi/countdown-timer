@@ -1,6 +1,7 @@
 //Countdown Timer Project
 
 //Variables
+const DOMcountdown = document.querySelector(".countdown");
 const DOMminutes = document.querySelector("#minutes");
 const DOMseconds = document.querySelector("#seconds");
 const startBtn = document.querySelector("#startBtn");
@@ -8,7 +9,7 @@ const resetBtn = document.querySelector("#resetBtn");
 const clearBtn = document.querySelector("#clearBtn");
 
 
-let secPerMin = 60;
+let secPerMin = 5;
 let givenMinute = 2;
 let givenSeconds;
 let minutes;
@@ -38,6 +39,7 @@ function startFn() {
 
     clearBtn.disabled = false;
 
+    DOMcountdown.classList.remove("times-up");
     startBtn.classList.add(displayNone);
     resetBtn.classList.remove(displayNone);
 
@@ -51,6 +53,7 @@ function startFn() {
         
         if (minutes === 0 && seconds === 0) {
             clearInterval(countdownInterval);
+            DOMcountdown.classList.add("times-up");
         }
     }, 1000)
 
@@ -61,6 +64,7 @@ function clearFn() {
 
     clearBtn.disabled = true;
 
+    DOMcountdown.classList.remove("times-up");
     startBtn.classList.remove(displayNone);
     resetBtn.classList.add(displayNone);
 

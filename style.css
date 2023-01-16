@@ -8,6 +8,7 @@
 
     --ff-main: 'Open Sans', sans-serif;
 
+    --clr-red: #ff0000;
     --clr-dark-blue-100: #001032d8;
     --clr-dark-blue-200: #001032;
 }
@@ -80,6 +81,7 @@ button{
     height: 20rem;
     width: 100%;
     max-width: 400px;
+    transition: all 250ms;
 }
 
 .countdown-wrapper{
@@ -127,9 +129,20 @@ button{
     background-color: var(--clr-dark-blue-200) ;
 }
 
+.times-up{
+    color: var(--clr-red);
+    animation: blink-animation 1s steps(3, start) infinite;
+   
+}
+ 
+@keyframes blink-animation {
+    to {
+      visibility: hidden;
+    }
+}
+
 @media only screen and (max-width: 500px){
     .countdown-container{
-        background-color: #00154e;
         height: 100vh;
         max-width: 100%;
         border-radius: 0;
