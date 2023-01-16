@@ -80,7 +80,6 @@ button{
     height: 20rem;
     width: 100%;
     max-width: 400px;
-    margin-inline: 5rem;
 }
 
 .countdown-wrapper{
@@ -126,4 +125,13 @@ button{
 
 .start-btn:hover, .reset-btn:hover{
     background-color: var(--clr-dark-blue-200) ;
+}
+
+@media only screen and (max-width: 500px){
+    .countdown-container{
+        background-color: #00154e;
+        height: 100vh;
+        max-width: 100%;
+        border-radius: 0;
+    }
 }
