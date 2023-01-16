@@ -1,3 +1,9 @@
+/*root css variables*/
+
+:root{
+    --main-gradiant: linear-gradient(to right bottom, #00154e, #001445, #00123c, #001032, #010c29);
+}
+
 /*utility classes*/
 
 /*Displays*/
@@ -13,3 +19,5 @@
 .d-flex{
     display: flex;
 }
+
+
