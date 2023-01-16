@@ -20,6 +20,22 @@
     display: flex;
 }
 
+.flex-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-col{
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-row{
+    display: flex;
+    flex-direction: row;
+}
+
 /*reset style*/
 
 *,
@@ -29,3 +45,5 @@
     margin: 0;
     padding: 0;
 }
+
+
