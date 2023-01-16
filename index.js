@@ -9,7 +9,7 @@ const resetBtn = document.querySelector("#resetBtn");
 const clearBtn = document.querySelector("#clearBtn");
 
 
-let secPerMin = 5;
+let secPerMin = 60;
 let givenMinute = 2;
 let givenSeconds;
 let minutes;
