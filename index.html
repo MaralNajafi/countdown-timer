@@ -8,14 +8,23 @@
     <title>Countdown Timer</title>
 </head>
 <body>
-    <div>
-        <span id="minutes">02</span>
-        <span>:</span>
-        <span id="seconds">00</span>
+
+    <div class="container">
+        <div class="countdown-wrapper">
+            <div class="countdown">
+                <span id="minutes">02</span>
+                <span>:</span>
+                <span id="seconds">00</span>
+            </div>
+        </div>
+
+        <div class="buttons-wrapper">
+            <button id="startBtn" class="start-btn">start</button>
+            <button id="resetBtn" class="reset-btn d-none">reset</button>
+            <button id="clearBtn" class="clear-btn">clear</button>
+        </div>
     </div>
-    <button id="startBtn">start</button>
-    <button id="resetBtn" class="d-none">reset</button>
-    <button id="clearBtn">clear</button>
+
     <script src="index.js"></script>
 </body>
 </html>
