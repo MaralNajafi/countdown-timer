@@ -8,7 +8,6 @@
 
     --ff-main: 'Open Sans', sans-serif;
 
-    --clr-red: #ff0000;
     --clr-dark-blue-100: #001032d8;
     --clr-dark-blue-200: #001032;
 }
@@ -130,7 +129,7 @@ button{
 }
 
 .times-up{
-    color: var(--clr-red);
+    color: var(--clr-dark-blue-200);
     animation: blink-animation 1s steps(3, start) infinite;
    
 }
