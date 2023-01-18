@@ -87,10 +87,23 @@ button{
     gap: 1rem;
 }
 
-.countdown{
-    justify-content: center;
+
+.countdown span {
+    display: inline-block;
     color: #ffffff;
     font-size: 7rem;
+    padding-bottom: 20px;
+}
+
+.countdown input{
+    display: block;
+    color: #ffffff;
+    font-size: 7rem;
+    text-align: center;
+    width: 10rem;
+    background: none;
+    border: none;
+    outline: none;
 }
 
 .buttons-wrapper{
