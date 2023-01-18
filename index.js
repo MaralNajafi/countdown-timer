@@ -13,8 +13,6 @@ const clearBtn = document.querySelector("#clearBtn");
 let secPerMin = 60;
 let givenMinute;
 let givenSeconds;
-let DOMminutesValue;
-let minutes;
 let seconds;
 let countdownInterval;
 
@@ -40,16 +38,17 @@ function timeDisplay(inputTime, outputTime) {
 //time validation
 function timeValidator() {
     DOMminutes.value = DOMminutes.value.replace(/[^0-9]/g, "");
-    DOMminutesValue = +DOMminutes.value;
-    if (DOMminutesValue === 0) {
+    givenMinute = +DOMminutes.value;
+    if (givenMinute === 0) {
         startBtn.disabled = true;
     }else{
         startBtn.disabled = false;
     }
 
-    /* if (DOMminutesValue > 60) {
+    /* if (givenMinute > 60) {
         DOMminutes.value = 60;
     } */
+
 }
 
 //set time function
@@ -61,7 +60,7 @@ function setTime() {
 
 //start function
 function startFn() {
-
+     
     DOMminutes.setAttribute("readonly", "");
     clearBtn.disabled = false;
     DOMminutes.classList.remove("edit-time");
@@ -73,10 +72,9 @@ function startFn() {
         DOMcountdownInp.classList.add("started");
     })
 
-    DOMminutesValue = +DOMminutes.value;
-    givenMinute = DOMminutesValue;
     givenSeconds = secPerMin * givenMinute;
     timeDisplay(givenMinute, DOMminutes)
+    
 
     countdownInterval = setInterval(() =>{
         --givenSeconds;
@@ -119,7 +117,8 @@ function clearFn() {
 
 //reset function
 function resetFn() {
-    clearFn();
+    clearInterval(countdownInterval);
+    DOMseconds.value = "00"
     startFn();
 };
 
