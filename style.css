@@ -14,8 +14,6 @@
 
 /*utility classes*/
 
-/*Displays*/
-
 .d-none{
     display: none;
 }
@@ -42,6 +40,10 @@
 .flex-row{
     display: flex;
     flex-direction: row;
+}
+
+.pe-none{
+    pointer-events: none;
 }
 
 /*reset style*/
@@ -147,6 +149,11 @@ button{
 
 .edit-time{
     animation: blink-animation 0.8s steps(3, start) infinite; 
+}
+
+.started{
+    color: rgba( 255, 255, 255, 0.8) !important;
+    pointer-events: none;
 }
 
 .times-up{

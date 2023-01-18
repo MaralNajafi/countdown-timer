@@ -2,6 +2,7 @@
 
 //Variables
 const DOMcountdown = document.querySelector(".countdown");
+const DOMcountdownInps = document.querySelectorAll(".countdown input");
 const DOMminutes = document.querySelector("#minutes");
 const DOMseconds = document.querySelector("#seconds");
 const startBtn = document.querySelector("#startBtn");
@@ -61,12 +62,16 @@ function setTime() {
 //start function
 function startFn() {
 
-    DOMminutes.setAttribute("readonly", "")
+    DOMminutes.setAttribute("readonly", "");
     clearBtn.disabled = false;
     DOMminutes.classList.remove("edit-time");
     DOMcountdown.classList.remove("times-up");
     startBtn.classList.add(displayNone);
     resetBtn.classList.remove(displayNone);
+
+    DOMcountdownInps.forEach(DOMcountdownInp => {
+        DOMcountdownInp.classList.add("started");
+    })
 
     DOMminutesValue = +DOMminutes.value;
     givenMinute = DOMminutesValue;
@@ -99,7 +104,9 @@ function clearFn() {
     startBtn.classList.remove(displayNone);
     resetBtn.classList.add(displayNone);
 
-    clearInterval(countdownInterval);
+    DOMcountdownInps.forEach(DOMcountdownInp => {
+        DOMcountdownInp.classList.remove("started");
+    })
     
     givenSeconds = secPerMin * givenMinute;
 
