@@ -28,9 +28,9 @@ clearBtn.disabled = true;
 // time display function
 function timeDisplay(inputTime, outputTime) {
     if (inputTime >= 10) {
-        outputTime.textContent = inputTime;
+        outputTime.value = inputTime;
     }else{
-        outputTime.textContent = `0${inputTime}`;
+        outputTime.value = `0${inputTime}`;
     }
 };
 
@@ -68,10 +68,17 @@ function clearFn() {
     startBtn.classList.remove(displayNone);
     resetBtn.classList.add(displayNone);
 
-    DOMminutes.textContent = "02";
-    DOMseconds.textContent = "00";
     clearInterval(countdownInterval);
+    
     givenSeconds = secPerMin * givenMinute;
+
+    minutes = Math.floor(givenSeconds / secPerMin);
+
+    seconds = Math.floor(givenSeconds % secPerMin);
+
+    timeDisplay(minutes, DOMminutes);
+    timeDisplay(seconds, DOMseconds);
+    
     clearInterval(countdownInterval);
 }
 
