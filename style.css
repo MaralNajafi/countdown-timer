@@ -106,6 +106,10 @@ button{
     outline: none;
 }
 
+#seconds{
+    pointer-events: none;
+}
+
 .buttons-wrapper{
     justify-content: center;
     gap: 30px;
