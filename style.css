@@ -141,6 +141,10 @@ button{
     background-color: var(--clr-dark-blue-200) ;
 }
 
+.edit-time{
+    animation: blink-animation 0.8s steps(3, start) infinite; 
+}
+
 .times-up{
     color: var(--clr-dark-blue-200);
     animation: blink-animation 1s steps(3, start) infinite;
