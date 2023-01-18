@@ -95,6 +95,7 @@ function startFn() {
 function clearFn() {
 
     clearBtn.disabled = true;
+    startBtn.disabled = true;
     
     DOMminutes.setAttribute("readonly", false);
     DOMminutes.classList.add("edit-time");
