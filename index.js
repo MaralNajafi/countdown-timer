@@ -46,6 +46,8 @@ function startFn() {
 
     clearBtn.disabled = false;
 
+    DOMminutes.setAttribute("readonly", true);
+    DOMminutes.classList.remove("edit-time");
     DOMcountdown.classList.remove("times-up");
     startBtn.classList.add(displayNone);
     resetBtn.classList.remove(displayNone);
@@ -70,7 +72,9 @@ function startFn() {
 function clearFn() {
 
     clearBtn.disabled = true;
-
+    
+    DOMminutes.setAttribute("readonly", true);
+    DOMminutes.classList.add("edit-time");
     DOMcountdown.classList.remove("times-up");
     startBtn.classList.remove(displayNone);
     resetBtn.classList.add(displayNone);
@@ -79,12 +83,9 @@ function clearFn() {
     
     givenSeconds = secPerMin * givenMinute;
 
-    minutes = Math.floor(givenSeconds / secPerMin);
+    DOMminutes.value = "00"
+    DOMseconds.value = "00"
 
-    seconds = Math.floor(givenSeconds % secPerMin);
-
-    timeDisplay(minutes, DOMminutes);
-    timeDisplay(seconds, DOMseconds);
 
     clearInterval(countdownInterval);
 }
