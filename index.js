@@ -34,6 +34,13 @@ function timeDisplay(inputTime, outputTime) {
     }
 };
 
+
+//set time function
+function setTime() {
+    DOMminutes.removeAttribute("readonly");
+    DOMminutes.classList.remove("edit-time");
+}
+
 //start function
 function startFn() {
 
@@ -78,7 +85,7 @@ function clearFn() {
 
     timeDisplay(minutes, DOMminutes);
     timeDisplay(seconds, DOMseconds);
-    
+
     clearInterval(countdownInterval);
 }
 
@@ -89,7 +96,7 @@ function resetFn() {
 };
 
 
-
+DOMminutes.addEventListener("focus", setTime)
 startBtn.addEventListener("click", startFn);
 resetBtn.addEventListener("click", resetFn);
 clearBtn.addEventListener("click", clearFn);
