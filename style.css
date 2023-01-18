@@ -130,10 +130,10 @@ button{
     color: var(--clr-dark-blue-200);
 }
 
-.clear-btn:disabled{
+.clear-btn:disabled, .start-btn:disabled{
     color: rgba(255, 255, 255, 0.285);
     background-color: rgba(255, 255, 255, 0.11);
-    cursor: default;
+    pointer-events: none;
 }
 
 .start-btn, .reset-btn{
