@@ -39,10 +39,8 @@ function timeDisplay(inputTime, outputTime) {
 function timeValidator() {
 
     givenMinute = +DOMminutes.value.replace(/[^0-9]/g, "");
-
     givenSeconds = +DOMseconds.value.replace(/[^0-9]/g, "");
 
-   
     if (givenMinute === 0 && givenSeconds === 0) {
         startBtn.disabled = true;
     }else{
@@ -56,7 +54,7 @@ function timeValidator() {
 }
 
 //set time function
-function setTime(e) {
+function editTime(e) {
     e.target.removeAttribute("readonly");
     e.target.classList.remove("edit-time");
     e.target.select();    
@@ -130,8 +128,8 @@ function restartFn() {
 };
 
 
-DOMminutes.addEventListener("focus", setTime);
-DOMseconds.addEventListener("focus", setTime);
+DOMminutes.addEventListener("focus", editTime);
+DOMseconds.addEventListener("focus", editTime);
 DOMminutes.addEventListener("input", timeValidator);
 DOMseconds.addEventListener("input", timeValidator);
 startBtn.addEventListener("click", startFn);
