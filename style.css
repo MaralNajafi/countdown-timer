@@ -4,7 +4,7 @@
 /*root css variables*/
 
 :root{
-    --main-gradiant: linear-gradient(to right bottom, #00154e, #001445, #00123c, #001032, #010c29);
+    --main-gradiant: linear-gradient(to right bottom, #354761, #273955, #192b49, #0b1e3e, #001032);
 
     --ff-main: 'Open Sans', sans-serif;
 
