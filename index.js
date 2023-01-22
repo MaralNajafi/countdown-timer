@@ -37,46 +37,51 @@ function timeDisplay(inputTime, outputTime) {
 
 //time validation
 function timeValidator() {
-    DOMminutes.value = DOMminutes.value.replace(/[^0-9]/g, "");
-    givenMinute = +DOMminutes.value;
-    if (givenMinute === 0) {
+
+    givenMinute = +DOMminutes.value.replace(/[^0-9]/g, "");
+
+    givenSeconds = +DOMseconds.value.replace(/[^0-9]/g, "");
+
+   
+    if (givenMinute === 0 && givenSeconds === 0) {
         startBtn.disabled = true;
     }else{
-        startBtn.disabled = false;
+        startBtn.disabled = false; 
     }
 
-    /* if (givenMinute > 60) {
-        DOMminutes.value = 60;
-    } */
+    if (givenSeconds > 60) {
+        DOMseconds.value = 60;
+    } 
 
 }
 
 //set time function
-function setTime() {
-    DOMminutes.removeAttribute("readonly");
-    DOMminutes.classList.remove("edit-time");
-    DOMminutes.select();
-    
+function setTime(e) {
+    e.target.removeAttribute("readonly");
+    e.target.classList.remove("edit-time");
+    e.target.select();    
 }
 
 //start function
 function startFn() {
-     
+    
     DOMminutes.setAttribute("readonly", "");
     clearBtn.disabled = false;
     DOMminutes.classList.remove("edit-time");
     DOMcountdown.classList.remove("times-up");
     startBtn.classList.add(displayNone);
     restartBtn.classList.remove(displayNone);
-
+    
     DOMcountdownInps.forEach(DOMcountdownInp => {
         DOMcountdownInp.classList.add("started");
     })
-
-    givenSeconds = secPerMin * givenMinute;
+    timeDisplay(givenSeconds, DOMseconds)
+    
+    givenSeconds= givenSeconds + (secPerMin * givenMinute);
+    
     timeDisplay(givenMinute, DOMminutes)
     
-
+    
     countdownInterval = setInterval(() =>{
         --givenSeconds;
         minutes = Math.floor(givenSeconds / secPerMin);
@@ -94,7 +99,7 @@ function startFn() {
 
 //clear function
 function clearFn() {
-
+    
     clearBtn.disabled = true;
     startBtn.disabled = true;
     
@@ -109,11 +114,11 @@ function clearFn() {
     })
     
     givenSeconds = secPerMin * givenMinute;
-
+    
     DOMminutes.value = "00"
     DOMseconds.value = "00"
-
-
+    
+    
     clearInterval(countdownInterval);
 }
 
@@ -125,8 +130,10 @@ function restartFn() {
 };
 
 
-DOMminutes.addEventListener("focus", setTime)
-DOMminutes.addEventListener("input", timeValidator)
+DOMminutes.addEventListener("focus", setTime);
+DOMseconds.addEventListener("focus", setTime);
+DOMminutes.addEventListener("input", timeValidator);
+DOMseconds.addEventListener("input", timeValidator);
 startBtn.addEventListener("click", startFn);
 restartBtn.addEventListener("click", restartFn);
 clearBtn.addEventListener("click", clearFn);
