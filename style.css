@@ -108,9 +108,6 @@ button{
     outline: none;
 }
 
-#seconds{
-    pointer-events: none;
-}
 
 .buttons-wrapper{
     justify-content: center;
@@ -147,9 +144,6 @@ button{
     background-color: var(--clr-dark-blue-200) ;
 }
 
-.edit-time{
-    animation: blink-animation 0.7s steps(3, start) infinite; 
-}
 
 .started{
     color: rgba( 255, 255, 255, 0.8) !important;
