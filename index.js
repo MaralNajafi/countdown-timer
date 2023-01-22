@@ -6,7 +6,7 @@ const DOMcountdownInps = document.querySelectorAll(".countdown input");
 const DOMminutes = document.querySelector("#minutes");
 const DOMseconds = document.querySelector("#seconds");
 const startBtn = document.querySelector("#startBtn");
-const resetBtn = document.querySelector("#resetBtn");
+const restartBtn = document.querySelector("#restartBtn");
 const clearBtn = document.querySelector("#clearBtn");
 
 
@@ -66,7 +66,7 @@ function startFn() {
     DOMminutes.classList.remove("edit-time");
     DOMcountdown.classList.remove("times-up");
     startBtn.classList.add(displayNone);
-    resetBtn.classList.remove(displayNone);
+    restartBtn.classList.remove(displayNone);
 
     DOMcountdownInps.forEach(DOMcountdownInp => {
         DOMcountdownInp.classList.add("started");
@@ -101,7 +101,7 @@ function clearFn() {
     DOMminutes.classList.add("edit-time");
     DOMcountdown.classList.remove("times-up");
     startBtn.classList.remove(displayNone);
-    resetBtn.classList.add(displayNone);
+    restartBtn.classList.add(displayNone);
 
     DOMcountdownInps.forEach(DOMcountdownInp => {
         DOMcountdownInp.classList.remove("started");
@@ -116,8 +116,8 @@ function clearFn() {
     clearInterval(countdownInterval);
 }
 
-//reset function
-function resetFn() {
+//restart function
+function restartFn() {
     clearInterval(countdownInterval);
     DOMseconds.value = "00"
     startFn();
@@ -127,5 +127,5 @@ function resetFn() {
 DOMminutes.addEventListener("focus", setTime)
 DOMminutes.addEventListener("input", timeValidator)
 startBtn.addEventListener("click", startFn);
-resetBtn.addEventListener("click", resetFn);
+restartBtn.addEventListener("click", restartFn);
 clearBtn.addEventListener("click", clearFn);

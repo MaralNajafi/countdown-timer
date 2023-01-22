@@ -138,12 +138,12 @@ button{
     pointer-events: none;
 }
 
-.start-btn, .reset-btn{
+.start-btn, .restart-btn{
     color: #ffffff;
     background-color: var(--clr-dark-blue-100);
 }
 
-.start-btn:hover, .reset-btn:hover{
+.start-btn:hover, .restart-btn:hover{
     background-color: var(--clr-dark-blue-200) ;
 }
 
