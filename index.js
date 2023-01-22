@@ -55,6 +55,7 @@ function timeValidator() {
 function setTime() {
     DOMminutes.removeAttribute("readonly");
     DOMminutes.classList.remove("edit-time");
+    DOMminutes.select();
     
 }
 
