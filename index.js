@@ -47,16 +47,15 @@ function timeValidator() {
         startBtn.disabled = false; 
     }
 
-    if (givenSeconds > 60) {
-        DOMseconds.value = 60;
+    if (givenSeconds > 59) {
+        DOMseconds.value = 59;
     } 
 
 }
 
-//set time function
+//edit time function
 function editTime(e) {
     e.target.removeAttribute("readonly");
-    e.target.classList.remove("edit-time");
     e.target.select();    
 }
 
@@ -64,8 +63,8 @@ function editTime(e) {
 function startFn() {
     
     DOMminutes.setAttribute("readonly", "");
+    DOMseconds.setAttribute("readonly", "");
     clearBtn.disabled = false;
-    DOMminutes.classList.remove("edit-time");
     DOMcountdown.classList.remove("times-up");
     startBtn.classList.add(displayNone);
     restartBtn.classList.remove(displayNone);
@@ -75,15 +74,15 @@ function startFn() {
     })
     timeDisplay(givenSeconds, DOMseconds)
     
-    givenSeconds= givenSeconds + (secPerMin * givenMinute);
+    computedSeconds= givenSeconds + (secPerMin * givenMinute);
     
     timeDisplay(givenMinute, DOMminutes)
     
     
     countdownInterval = setInterval(() =>{
-        --givenSeconds;
-        minutes = Math.floor(givenSeconds / secPerMin);
-        seconds = Math.floor(givenSeconds % secPerMin);
+        --computedSeconds;
+        minutes = Math.floor(computedSeconds / secPerMin);
+        seconds = Math.floor(computedSeconds % secPerMin);
         timeDisplay(minutes, DOMminutes)
         timeDisplay(seconds, DOMseconds)
         
@@ -123,7 +122,6 @@ function clearFn() {
 //restart function
 function restartFn() {
     clearInterval(countdownInterval);
-    DOMseconds.value = "00"
     startFn();
 };
 
