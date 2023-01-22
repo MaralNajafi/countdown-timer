@@ -46,6 +46,10 @@
     pointer-events: none;
 }
 
+.op1{
+    opacity: 1 !important;
+}
+
 /*reset style*/
 
 *,
@@ -79,9 +83,10 @@ button{
     -webkit-backdrop-filter: blur( 4px );
     border-radius: 10px;
     border: 1px solid rgba( 255, 255, 255, 0.18 );
-    height: 20rem;
+    min-height: 20rem;
     width: 100%;
     max-width: 400px;
+    padding-block: 2rem;
     transition: all 250ms;
 }
 
@@ -89,6 +94,19 @@ button{
     gap: 1rem;
 }
 
+.countdown-header h1, .countdown-header h2{
+    color: #ffffff;
+    font-weight: 400;
+    text-transform: capitalize;
+    text-align: center;
+    letter-spacing: 0.6px;
+}
+
+.countdown-header h2{
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 50ms ease-in;
+}
 
 .countdown span {
     display: inline-block;
