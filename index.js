@@ -44,7 +44,8 @@ function timeValidator() {
     if (givenMinute === 0 && givenSeconds === 0) {
         startBtn.disabled = true;
     }else{
-        startBtn.disabled = false; 
+        startBtn.disabled = false;
+        clearBtn.disabled = false;
     }
 
     if (givenSeconds > 59) {
