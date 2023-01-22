@@ -39,8 +39,11 @@ function timeDisplay(inputTime, outputTime) {
 //time validation
 function timeValidator() {
 
-    givenMinute = +DOMminutes.value.replace(/[^0-9]/g, "");
-    givenSeconds = +DOMseconds.value.replace(/[^0-9]/g, "");
+    DOMminutes.value = DOMminutes.value.replace(/[^0-9]/g, "");
+    DOMseconds.value = DOMseconds.value.replace(/[^0-9]/g, "");
+    
+    givenMinute = +DOMminutes.value;
+    givenSeconds = +DOMseconds.value;
 
     if (givenMinute === 0 && givenSeconds === 0) {
         startBtn.disabled = true;
@@ -48,10 +51,6 @@ function timeValidator() {
         startBtn.disabled = false;
         clearBtn.disabled = false;
     }
-
-    if (givenSeconds > 59) {
-        DOMseconds.value = 59;
-    } 
 
 }
 
