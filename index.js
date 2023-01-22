@@ -8,6 +8,9 @@ const DOMseconds = document.querySelector("#seconds");
 const startBtn = document.querySelector("#startBtn");
 const restartBtn = document.querySelector("#restartBtn");
 const clearBtn = document.querySelector("#clearBtn");
+const displayTime = document.querySelector(".countdown-header h2");
+const displayMin = document.querySelector("#displayMin");
+const displaySec = document.querySelector("#displaySec");
 
 
 let secPerMin = 60;
@@ -28,11 +31,9 @@ startBtn.disabled = true;
 
 // time display function
 function timeDisplay(inputTime, outputTime) {
-    if (inputTime >= 10) {
-        outputTime.value = inputTime;
-    }else{
-        outputTime.value = `0${inputTime}`;
-    }
+
+    outputTime.value = inputTime >= 10 ? inputTime : `0${inputTime}`
+
 };
 
 //time validation
@@ -60,6 +61,12 @@ function editTime(e) {
     e.target.select();    
 }
 
+//displaye initial time function
+function displayInitTime(min,sec) {
+    displayMin.textContent = min >= 10 ? min : `0${min}`;
+    displaySec.textContent = sec >= 10 ? sec : `0${sec}`;
+}
+
 //start function
 function startFn() {
     
@@ -69,16 +76,18 @@ function startFn() {
     DOMcountdown.classList.remove("times-up");
     startBtn.classList.add(displayNone);
     restartBtn.classList.remove(displayNone);
-    
     DOMcountdownInps.forEach(DOMcountdownInp => {
         DOMcountdownInp.classList.add("started");
     })
+    displayTime.classList.add("op1");
+
+
     timeDisplay(givenSeconds, DOMseconds)
+    timeDisplay(givenMinute, DOMminutes)
+    displayInitTime(givenMinute,givenSeconds);
+    
     
     computedSeconds= givenSeconds + (secPerMin * givenMinute);
-    
-    timeDisplay(givenMinute, DOMminutes)
-    
     
     countdownInterval = setInterval(() =>{
         --computedSeconds;
@@ -106,6 +115,7 @@ function clearFn() {
     DOMcountdown.classList.remove("times-up");
     startBtn.classList.remove(displayNone);
     restartBtn.classList.add(displayNone);
+    displayTime.classList.remove("op1");
 
     DOMcountdownInps.forEach(DOMcountdownInp => {
         DOMcountdownInp.classList.remove("started");
