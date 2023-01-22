@@ -148,7 +148,7 @@ button{
 }
 
 .edit-time{
-    animation: blink-animation 0.8s steps(3, start) infinite; 
+    animation: blink-animation 0.7s steps(3, start) infinite; 
 }
 
 .started{
