@@ -60,12 +60,16 @@ function timeValidator() {
     }
 
     if (DOMsecondsVal > 59) {
-        DOMseconds.value = 59
+        DOMseconds.value = 59;
+        DOMsecondsVal = 59;
     }
+
+    givenMinute = DOMminutesVal;
+    givenSeconds = DOMsecondsVal;
 
     isValid = true;
 
-}
+};
 
 
 //displaye initial time function
@@ -76,6 +80,10 @@ function displayInitTime(min,sec) {
 
 //start function
 function startFn() {
+
+    if (!isValid) {
+        return
+    }
     
     DOMminutes.setAttribute("readonly", "");
     DOMseconds.setAttribute("readonly", "");
