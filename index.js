@@ -156,6 +156,9 @@ function restartFn() {
 DOMcountdownInps.forEach(inp => {
     inp.addEventListener("focus", editTime);
     inp.addEventListener("input", timeValidator);
+    inp.addEventListener("blur", () =>{
+        inp.value = inp.value > 9 ? inp.value : `0${inp.value}`
+    })
 })
 startBtn.addEventListener("click", startFn);
 restartBtn.addEventListener("click", restartFn);
