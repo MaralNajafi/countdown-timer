@@ -18,6 +18,7 @@ let givenMinute;
 let givenSeconds;
 let seconds;
 let countdownInterval;
+let isValid;
 
 //CSS class names - variables
 
@@ -36,29 +37,36 @@ function timeDisplay(inputTime, outputTime) {
 
 };
 
+//edit time function
+function editTime(e) {
+    e.target.removeAttribute("readonly");
+    e.target.select();    
+}
+
 //time validation
 function timeValidator() {
 
     DOMminutes.value = DOMminutes.value.replace(/[^0-9]/g, "");
     DOMseconds.value = DOMseconds.value.replace(/[^0-9]/g, "");
     
-    givenMinute = +DOMminutes.value;
-    givenSeconds = +DOMseconds.value;
+    let DOMminutesVal = +DOMminutes.value;
+    let DOMsecondsVal = +DOMseconds.value;
 
-    if (givenMinute === 0 && givenSeconds === 0) {
+    if (DOMminutesVal === 0 && DOMsecondsVal === 0) {
         startBtn.disabled = true;
     }else{
         startBtn.disabled = false;
         clearBtn.disabled = false;
     }
 
+    if (DOMsecondsVal > 59) {
+        DOMseconds.value = 59
+    }
+
+    isValid = true;
+
 }
 
-//edit time function
-function editTime(e) {
-    e.target.removeAttribute("readonly");
-    e.target.select();    
-}
 
 //displaye initial time function
 function displayInitTime(min,sec) {
