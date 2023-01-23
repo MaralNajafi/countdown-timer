@@ -94,6 +94,10 @@ button{
     gap: 1rem;
 }
 
+.countdown-header{
+    gap: 1rem;
+}
+
 .countdown-header h1, .countdown-header h2{
     color: #ffffff;
     font-weight: 400;
