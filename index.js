@@ -136,10 +136,11 @@ function restartFn() {
 };
 
 
-DOMminutes.addEventListener("focus", editTime);
-DOMseconds.addEventListener("focus", editTime);
-DOMminutes.addEventListener("input", timeValidator);
-DOMseconds.addEventListener("input", timeValidator);
+
+DOMcountdownInps.forEach(inp => {
+    inp.addEventListener("focus", editTime);
+    inp.addEventListener("input", timeValidator);
+})
 startBtn.addEventListener("click", startFn);
 restartBtn.addEventListener("click", restartFn);
 clearBtn.addEventListener("click", clearFn);
