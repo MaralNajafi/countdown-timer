@@ -158,7 +158,9 @@ DOMcountdownInps.forEach(inp => {
     inp.addEventListener("input", timeValidator);
     inp.addEventListener("blur", () =>{
         if (inp.value !== "" && inp.value !== "00") {
-            inp.value = inp.value > 9 ? inp.value : `0${inp.value}`
+            if (inp.value.length < 2) {
+                inp.value = inp.value > 9 ? inp.value : `0${inp.value}`
+            }
         }else{
             inp.value = "00";
         }
