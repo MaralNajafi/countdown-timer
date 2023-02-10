@@ -13,7 +13,7 @@ const displayMin = document.querySelector("#displayMin");
 const displaySec = document.querySelector("#displaySec");
 
 
-let secPerMin = 60;
+const SEC_PER_MIN = 60;
 let givenMinute;
 let givenSeconds;
 let seconds;
@@ -102,12 +102,12 @@ function startFn() {
     displayInitTime(givenMinute,givenSeconds);
     
     
-    computedSeconds= givenSeconds + (secPerMin * givenMinute);
+    computedSeconds= givenSeconds + (SEC_PER_MIN * givenMinute);
     
     countdownInterval = setInterval(() =>{
         --computedSeconds;
-        minutes = Math.floor(computedSeconds / secPerMin);
-        seconds = Math.floor(computedSeconds % secPerMin);
+        minutes = Math.floor(computedSeconds / SEC_PER_MIN);
+        seconds = Math.floor(computedSeconds % SEC_PER_MIN);
         timeDisplay(minutes, DOMminutes)
         timeDisplay(seconds, DOMseconds)
         
@@ -136,7 +136,7 @@ function clearFn() {
         DOMcountdownInp.classList.remove("started");
     })
     
-    givenSeconds = secPerMin * givenMinute;
+    givenSeconds = SEC_PER_MIN * givenMinute;
     
     DOMminutes.value = "00"
     DOMseconds.value = "00"
