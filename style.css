@@ -1,193 +1,200 @@
 /*font*/
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500&display=swap");
 
 /*root css variables*/
 
-:root{
-    --main-gradiant: linear-gradient(to right bottom, #354761, #273955, #192b49, #0b1e3e, #001032);
+:root {
+  --main-gradiant: linear-gradient(
+    to right bottom,
+    #b60060,
+    #ca3b7e,
+    #dc5e9c,
+    #ee7eba,
+    #ff9dd8
+  );
 
-    --ff-main: 'Open Sans', sans-serif;
+  --ff-main: "Open Sans", sans-serif;
 
-    --clr-dark-blue-100: #001032d8;
-    --clr-dark-blue-200: #001032;
+  --clr-dark-blue-100: #b60060;
+  --clr-dark-blue-200: #ad005c;
 }
 
 /*utility classes*/
 
-.d-none{
-    display: none;
+.d-none {
+  display: none;
 }
 
-.d-block{
-    display: block;
+.d-block {
+  display: block;
 }
 
-.d-flex{
-    display: flex;
+.d-flex {
+  display: flex;
 }
 
-.flex-center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.flex-col{
-    display: flex;
-    flex-direction: column;
+.flex-col {
+  display: flex;
+  flex-direction: column;
 }
 
-.flex-row{
-    display: flex;
-    flex-direction: row;
+.flex-row {
+  display: flex;
+  flex-direction: row;
 }
 
-.pe-none{
-    pointer-events: none;
+.pe-none {
+  pointer-events: none;
 }
 
-.op1{
-    opacity: 1 !important;
+.op1 {
+  opacity: 1 !important;
 }
 
 /*reset style*/
 
 *,
 *::after,
-*::before{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-button{
-    font-family: inherit;
-    background: none;
-    border: none;
-    outline: none;
-    cursor: pointer;
+button {
+  font-family: inherit;
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
 }
 
 /*countdown style*/
 
-.container{
-    height: 100vh;
-    background-image: var(--main-gradiant);
-    font-family: var(--ff-main);
+.container {
+  height: 100vh;
+  background-image: var(--main-gradiant);
+  font-family: var(--ff-main);
 }
 
-.countdown-container{
-    background: rgba( 255, 255, 255, 0.25 );
-    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
-    backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
-    border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-    min-height: 20rem;
-    width: 100%;
-    max-width: 400px;
-    padding-block: 2rem;
-    transition: all 250ms;
+.countdown-container {
+  background: rgba(255, 219, 238, 0.25);
+  box-shadow: 0 1px 6px #ffdbee;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-radius: 10px;
+  min-height: 20rem;
+  width: 100%;
+  max-width: 400px;
+  padding-block: 2rem;
+  transition: all 250ms;
 }
 
-.countdown-wrapper{
-    gap: 1rem;
+.countdown-wrapper {
+  gap: 1rem;
 }
 
-.countdown-header{
-    gap: 1rem;
+.countdown-header {
+  gap: 1rem;
 }
 
-.countdown-header h1, .countdown-header h2{
-    color: #ffffff;
-    font-weight: 400;
-    text-transform: capitalize;
-    text-align: center;
-    letter-spacing: 0.6px;
+.countdown-header h1,
+.countdown-header h2 {
+  color: #ffffff;
+  font-weight: 400;
+  text-transform: capitalize;
+  text-align: center;
+  letter-spacing: 0.6px;
 }
 
-.countdown-header h2{
-    justify-content: center;
-    opacity: 0;
-    transition: opacity 50ms ease-in;
+.countdown-header h2 {
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 50ms ease-in;
 }
 
 .countdown span {
-    display: inline-block;
-    color: #ffffff;
-    font-size: 7rem;
-    padding-bottom: 20px;
+  display: inline-block;
+  color: #ffffff;
+  font-size: 7rem;
+  padding-bottom: 20px;
 }
 
-.countdown input{
-    display: block;
-    color: #ffffff;
-    font-size: 7rem;
-    text-align: center;
-    width: 10rem;
-    background: none;
-    border: none;
-    outline: none;
+.countdown input {
+  display: block;
+  color: #ffffff;
+  font-size: 7rem;
+  text-align: center;
+  width: 10rem;
+  background: none;
+  border: none;
+  outline: none;
 }
 
-
-.buttons-wrapper{
-    justify-content: center;
-    gap: 30px;
+.buttons-wrapper {
+  justify-content: center;
+  gap: 30px;
 }
 
-.buttons-wrapper button{
-    font-size: 18px;
-    font-weight: 500;
-    text-transform: capitalize;
-    letter-spacing: 0.5px;
-    width: 8rem;
-    padding-block: 8px;
-    border-radius: 20px;
+.buttons-wrapper button {
+  font-size: 18px;
+  font-weight: 500;
+  text-transform: capitalize;
+  letter-spacing: 0.5px;
+  width: 8rem;
+  padding-block: 8px;
+  border-radius: 20px;
 }
 
-.clear-btn{
-    background-color: #ffffff;
-    color: var(--clr-dark-blue-200);
+.clear-btn {
+  background-color: #ffffff;
+  color: var(--clr-dark-blue-200);
 }
 
-.clear-btn:disabled, .start-btn:disabled{
-    color: rgba(255, 255, 255, 0.285);
-    background-color: rgba(255, 255, 255, 0.11);
-    pointer-events: none;
+.clear-btn:disabled,
+.start-btn:disabled {
+  color: rgba(255, 255, 255, 0.285);
+  background-color: rgba(255, 255, 255, 0.11);
+  pointer-events: none;
 }
 
-.start-btn, .restart-btn{
-    color: #ffffff;
-    background-color: var(--clr-dark-blue-100);
+.start-btn,
+.restart-btn {
+  color: #ffffff;
+  background-color: var(--clr-dark-blue-100);
 }
 
-.start-btn:hover, .restart-btn:hover{
-    background-color: var(--clr-dark-blue-200) ;
+.start-btn:hover,
+.restart-btn:hover {
+  background-color: var(--clr-dark-blue-200);
 }
 
-
-.started{
-    color: rgba( 255, 255, 255, 0.8) !important;
-    pointer-events: none;
+.started {
+  color: rgba(255, 255, 255, 0.8) !important;
+  pointer-events: none;
 }
 
-.times-up{
-    color: var(--clr-dark-blue-200);
-    animation: blink-animation 1s steps(3, start) infinite;
-   
+.times-up {
+  color: var(--clr-dark-blue-200);
+  animation: blink-animation 1s steps(3, start) infinite;
 }
- 
+
 @keyframes blink-animation {
-    to {
-      visibility: hidden;
-    }
+  to {
+    visibility: hidden;
+  }
 }
 
-@media only screen and (max-width: 500px){
-    .countdown-container{
-        height: 100vh;
-        max-width: 100%;
-        border-radius: 0;
-    }
+@media only screen and (max-width: 500px) {
+  .countdown-container {
+    height: 100vh;
+    max-width: 100%;
+    border-radius: 0;
+  }
 }
